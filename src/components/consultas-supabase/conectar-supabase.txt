@@ -1,0 +1,6 @@
+CONECTARSE Y RENDERIZAR
+-crear el proyecto de supabase (la base de datos)
+-instalar el packate de supabase/supabase.js
+-crear el archivo .env.local y agregar la supabase_url y la publisheable_key
+-crear el archivo que crea el cliente de supabase con la url y la publisheable_key
+-importar supabase en un componente para hacer uso de los datos segun los permisos de RLS, las variables de interface deben coincidir con los nombres de las columnas de la tabla

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { sendWhatsApp } from "../send-whatsApp"
+import { sendWhatsApp } from "./send-whatsApp"
 
 export default function FormularioWhatsApp() {
   const [nombre, setNombre] = useState("")
@@ -8,12 +8,12 @@ export default function FormularioWhatsApp() {
   const [telefono, setTelefono] = useState("")
 
   const handleSendWhatsApp = () => {
-    const mensaje = `Hola ${nombre} 👋
+    const mensaje = `Hola ${nombre}
 
       Te contacto para compartirte la siguiente información:
 
-      📦 Producto: ${producto}
-      💰 Precio: $${precio}
+      Producto: ${producto}
+      Precio: $${precio}
 
       ¡Quedo atento/a a tu respuesta!`
 
@@ -21,7 +21,7 @@ export default function FormularioWhatsApp() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <input
         type="text"
         placeholder="Nombre"
