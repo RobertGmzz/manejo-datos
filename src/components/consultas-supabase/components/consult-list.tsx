@@ -1,20 +1,19 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../utils/supabase'
 
-interface UserData {
+interface Todos {
     id: string,
-    user_id: string,
-    patients: string,
-    consults: string
+    task: string,
+    completed: boolean,
 }
 
 export function ConsultList() {
-    const [consults, setConsults] = useState<UserData[]>([])
+    const [todos, setTodos] = useState<Todos[]>([])
     
     useEffect(() => {
-        async function getConsults() {
+        async function getTodos() {
             const { data, error } = await supabase
-            .from('consultas-medicas')
+            .from('todo-list')
             .select('*')
 
         if (error) {
@@ -23,19 +22,19 @@ export function ConsultList() {
         }
 
         if(data) {
-            setConsults(data as UserData[])
+            setTodos(data as Todos[])
         }
     }
     
-    getConsults()
+    getTodos()
     }, [])
     
     return (
         <ul>
-            {consults.map((consult) => (
-                <li key={consult.id}>
-                    <span>{consult.patients}</span>
-                    <p>{consult.consults}</p>
+            {todos.map((todo) => (
+                <li key={todo.id}>
+                    <span>{todo.task}</span>
+                    <input type="checkbox" />
                 </li>
             ))}
         </ul>
