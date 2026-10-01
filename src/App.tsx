@@ -1,12 +1,12 @@
 //import FormularioWhatsApp from "./components/clicktochat-whatsapp/form"
-import { ConsultList } from "./components/consultas-supabase/components/consult-list"
+import { TodoApp } from "./components/crud-supabase/components/todo-list"
 
 function App() {
 
   return (
     <div className="w-full h-screen bg-black text-white">
       {/* <FormularioWhatsApp /> */}
-      <ConsultList />
+      <TodoApp />
     </div>
   )
 }
